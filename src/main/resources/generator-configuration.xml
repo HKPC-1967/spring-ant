@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <context id="sss" targetRuntime="MyBatis3" >
+        <commentGenerator type="org.hkpc.dtd.component.postgres.mybatis.generator.CustomCommentGenerator">
+            <property name="dateFormat" value="yyyy/MM/dd"/>
+        </commentGenerator>
+
+        <!--连接数据库 connect to the database-->
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://localhost:5432/postgres"
+                        userId="postgres"
+                        password="postgres">
+        </jdbcConnection>
+
+        <!--生成实体类，targetPackage是包名，targetProject是生成的包在工程中的哪个文件夹下 generate the model class-->
+        <javaModelGenerator targetPackage="org.hkpc.dtd.component.postgres.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--生成.xml文件 generate the .xml files-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--生成dao层接口 generate the dao classes-->
+<!--        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="org.hkpc.dtd.component.postgres.dao" targetProject="src/main/java">-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="org.hkpc.dtd.component.postgres.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!--数据库表名配置,tablename是数据库的表名，domainObjectName是生成实体类的类名 config the tablename to generate codes, domainObjectName is the class name-->
+<!--        <table tableName="demo_rule" domainObjectName="DemoRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--        </table>-->
+<!--        <table tableName="db_config" domainObjectName="DbConfig" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--        </table>-->
+<!--        <table tableName="user_account" domainObjectName="UserAccount" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table tableName="account_role_relation" domainObjectName="AccountRoleRelation" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+
+<!--        if you want to test MybatiGenerator.java to re-generate the code for user_role, you can delete UserRoleMapper.xml (for .xml, the new-generated code will be appended to the original file if you don't delete it first), then run MybatisGenerator.java-->
+<!--        中文注释：如果你想测试MybatiGenerator.java重新生成user_role表的代码，你可以先删除UserRoleMapper.xml（对于.xml文件，如果你不先删除它，新的生成的代码将会被追加到原来的文件后面，而不是覆盖原文件），然后运行MybatisGenerator.java-->
+<!--        <table tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--        </table>-->
+
+<!--        you can use this test_mybatis_generator table to test how to use MybatiGenerator.java to generate Mybatis code for a new Database table-->
+<!--        中文注释：你可以使用这个test_mybatis_generator表来测试如何使用MybatiGenerator.java为一个新的数据库表生成Mybatis代码-->
+        <table tableName="test_mybatis_generator" domainObjectName="TestMybatisGenerator" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+        </table>
+
+
+
+    </context>
+</generatorConfiguration>

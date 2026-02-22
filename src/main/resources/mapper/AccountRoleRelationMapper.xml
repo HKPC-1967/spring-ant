@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hkpc.dtd.component.postgres.dao.AccountRoleRelationMapper">
+  <resultMap id="BaseResultMap" type="org.hkpc.dtd.component.postgres.model.AccountRoleRelation">
+    <id column="user_account_id" jdbcType="INTEGER" property="userAccountId" />
+    <id column="user_role_id" jdbcType="INTEGER" property="userRoleId" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_account_id, user_role_id, created_at
+  </sql>
+
+  <select id="selectAllByAccountId" parameterType="org.hkpc.dtd.component.postgres.model.AccountRoleRelationKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from account_role_relation
+    where user_account_id = #{userAccountId,jdbcType=INTEGER}
+  </select>
+  <!---->
+  <select id="selectByPrimaryKey" parameterType="org.hkpc.dtd.component.postgres.model.AccountRoleRelationKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from account_role_relation
+    where user_account_id = #{userAccountId,jdbcType=INTEGER}
+      and user_role_id = #{userRoleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="org.hkpc.dtd.component.postgres.model.AccountRoleRelationKey">
+    delete from account_role_relation
+    where user_account_id = #{userAccountId,jdbcType=INTEGER}
+      and user_role_id = #{userRoleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.hkpc.dtd.component.postgres.model.AccountRoleRelation">
+    insert into account_role_relation (user_account_id, user_role_id, created_at
+      )
+    values (#{userAccountId,jdbcType=INTEGER}, #{userRoleId,jdbcType=INTEGER}, #{createdAt,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.hkpc.dtd.component.postgres.model.AccountRoleRelation">
+    insert into account_role_relation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userAccountId != null">
+        user_account_id,
+      </if>
+      <if test="userRoleId != null">
+        user_role_id,
+      </if>
+      <if test="createdAt != null">
+        created_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userAccountId != null">
+        #{userAccountId,jdbcType=INTEGER},
+      </if>
+      <if test="userRoleId != null">
+        #{userRoleId,jdbcType=INTEGER},
+      </if>
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.hkpc.dtd.component.postgres.model.AccountRoleRelation">
+    update account_role_relation
+    <set>
+      <if test="createdAt != null">
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_account_id = #{userAccountId,jdbcType=INTEGER}
+      and user_role_id = #{userRoleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.hkpc.dtd.component.postgres.model.AccountRoleRelation">
+    update account_role_relation
+    set created_at = #{createdAt,jdbcType=TIMESTAMP}
+    where user_account_id = #{userAccountId,jdbcType=INTEGER}
+      and user_role_id = #{userRoleId,jdbcType=INTEGER}
+  </update>
+</mapper>

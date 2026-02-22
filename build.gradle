@@ -1,0 +1,89 @@
+// ./gradlew clean
+// ./gradlew build -x test
+// ./gradlew --version
+
+// all versions belows are updated at 2026-02-14, excepted the ones specified with comments.
+// 中文注释： 以下所有版本均于2026-02-14更新了大版本下的最新版本，有最新大版本未更新的依赖后面有注释标记。
+plugins {
+    id 'org.springframework.boot' version '3.5.10' //v4 available
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21) //25 available, 21 is the last LTS (Long Time Support) version
+	}
+}
+
+group = 'org.hkpc.dtd'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '21'
+targetCompatibility = '21'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    testImplementation 'org.springframework.security:spring-security-test'
+
+    implementation 'org.postgresql:postgresql:42.7.10'
+    implementation 'com.alibaba:druid:1.2.27'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'//v4 available
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:2.1.1'
+    implementation 'org.mybatis.generator:mybatis-generator-core:1.4.2'
+
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.15'//v3 available
+
+    implementation 'org.aspectj:aspectjweaver:1.9.25.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+
+    implementation 'com.alibaba.fastjson2:fastjson2:2.0.61'
+
+    implementation 'io.jsonwebtoken:jjwt-api:0.13.0'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.13.0'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.13.0'
+
+    implementation 'com.fasterxml.uuid:java-uuid-generator:5.2.0'
+
+    implementation 'org.apache.poi:poi:5.5.1'
+    implementation 'org.apache.poi:poi-ooxml:5.5.1'
+}
+
+bootRun {
+  systemProperty 'spring.profiles.active', findProperty('spring.profiles.active') ?: 'dev'
+}
+
+def placeTasksInOrder(List tasks) {
+    for (int i=0; i < tasks.size() -1; i++) {
+        def earlierTask = tasks.get(i)
+        def laterTask   = tasks.get(i +1)
+        laterTask.mustRunAfter(earlierTask)
+    }
+}
+
+task buildWithTest {
+    def containedTasks = [clean, build]
+    dependsOn containedTasks
+    placeTasksInOrder(containedTasks)
+}
+
+//reason: https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention:
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-parameters")
+}
+tasks.withType(GroovyCompile).configureEach {
+    groovyOptions.parameters = true
+}
+
+// test all functions with @Test
+//tasks.withType(Test) {
+//    useJUnitPlatform()
+//}

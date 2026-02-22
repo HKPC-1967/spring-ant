@@ -1,0 +1,53 @@
+# The customized configurations of this project. You can add more configurations here.
+project-config:
+#  if you want to enable the refresh token function, front end have the same configuration with the same name
+  ENABLE_REFRESH_TOKEN: true
+  redact:
+    header-keys: [Authorization, refreshToken, Cookie]
+    query-keys: []
+    body-keys: []
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+server:
+  servlet:
+#    The server.servlet.context-path property specifies the base URI path for the application. In this case, it is set to "/api". This means that all endpoints in the application will be prefixed with /api. For example, if there is a REST endpoint mapped to /users, it will be accessible at /api/users.
+    context-path: /api
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#  don't return null to Front End
+  jackson:
+    default-property-inclusion: non_null
+
+  servlet:
+#    file upload
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.hkpc.dtd.component.postgres.model
+pagehelper:
+  helperDialect: postgresql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss.SSS
+#  level:
+#    com.datastax.oss.driver: DEBUG

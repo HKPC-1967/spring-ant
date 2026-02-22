@@ -1,0 +1,20 @@
+project-config:
+#  when production, avoid committing it, recommend to use technologies like Cloud Vault and CI/CD to store and replace the secret key in the pipeline
+#  the aes key here must be 16 characters long
+  db-config-aes-key: osGvEaD8qoEKLUXT
+  spring-security:
+    # change to specific domain in production, e.g., https://www.example.com, do not use "*" in production, otherwise it will cause security issues.
+    # use "," to separate multiple origins, e.g., "https://www.example.com,https://www.another-example.com"
+    cors-allowed-origins: "*,https://www.example.com"
+    swagger-auth:
+      username: swagger
+      password: change-me
+
+spring:
+  datasource:
+    # "postgres" is the database name, one PostgreSQL server can have multiple databases
+    url: jdbc:postgresql://host.docker.internal:5432/postgres
+    username: postgres
+    password: postgres
+
+
