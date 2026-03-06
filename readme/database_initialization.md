@@ -14,8 +14,7 @@ Create tables in the `postgres` database using the following SQL scripts:
 
 ## 3. Change default keys (AES key and JWT key)
 
-For security reasons, you should change the default AES key and JWT key, but you can skip this step for local testing.  
-出于安全考虑，建议修改默认的 AES key 和 JWT key，但在本地测试时可以先跳过这一步。
+For security reasons, you should change the default AES key and JWT key, but you can skip this step for local testing.
 
 ### 1) Generate new keys with [AesUtil.java](../src/main/java/org/hkpc/dtd/common/utils/AesUtil.java)
 
@@ -36,8 +35,7 @@ project-config:
 
 ### 3) Replace encrypted JWT key in database
 
-
-Replace the `jwt_key` record with the printed SQL:
+Use the SQL printed to the console (as shown in the demo below) and execute it in the database to replace the encrypted `jwt_key` in the database:
 
 ```sql
 UPDATE db_config

@@ -1,27 +1,22 @@
-Language : [简体中文](README.zh-CN.md)
+Language : [简体中文](README.zh-CN.md) | [繁體中文](README.zh-HK.md)
 
 # Sprint Ant Family
 Sprint Ant Family consists of three open-source repositories designed for rapid web application development.  
-- **Sprint Ant Backend**: this repository.
-- **[Sprint Ant Frontend](https://github.com/HKPC-1967/spring-ant-frontend)**: a React framework based on **Ant Design Pro**.
-- **[Sprint Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)** 
+- **Sprint Ant Backend**: the Spring Boot Backend (this repository).
+- **[Sprint Ant Frontend](https://github.com/HKPC-1967/spring-ant-frontend)**: the React Frontend based on **Ant Design Pro**, for quickly building an **admin-panel web application**, see Feature Highlights screenshot below.
+- **[Sprint Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)**: if you are not using **Ant Design Pro** as your UI framework, then you can copy the 200 lines of core TypeScript code into your existing Frontend to integrate with the **Spring Ant Backend** API. 
 
-You can choose from the combinations below depending on your needs:
-- Backend + Frontend (for quickly building an **admin-panel web application**)  
-  We've hosted a demo server for you to try: http://20.114.26.109/ (username: `admin` or `user`, password: `ant.design`)
-  
-- Backend + Frontend API Core + Your Existing Frontend (if you are not using **Ant Design Pro** as your UI framework)
 
 ## Feature Highlights
-- Login with JWT tokens  
+- Login with JWT tokens (default username: `admin` or `user`, password: `ant.design`)  
 - Multi-language support  
-![login_page.png](readme/document_images/readme/Login_page.png)
+![login_Page.jpg](readme/document_images/readme/Login_Page.jpg)
 - Role-Based Access Control (Spring Security RBAC for backend APIs)  
   As shown in red below, the admin on the left has access to "admin page", "admin sub-page", and "admin button", while the regular user on the right does not.
 - Error Codes and Display Types  
   As shown in blue below, the backend can return different error codes and display types based on business needs. Network and HTTP-level errors are also handled uniformly.  
 - Configurable Layout: Dark Mode, Theme Color, Navigation (side, top, mix), etc. 
-![RBAC_Message.png](readme/document_images/readme/RBAC_Message.png)
+![RBAC_Message.jpg](readme/document_images/readme/RBAC_Message.jpg)
 - Loading spinners (red below)
 - Loading overlay to prevent user interaction while requests are in progress
 - Pagination (yellow below)
