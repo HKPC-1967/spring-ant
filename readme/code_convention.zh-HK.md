@@ -1,5 +1,5 @@
-# 代碼規範
-我們沒有嚴格的代碼規範，你可以定義適合你項目的代碼規範。以下是我們有使用的一些規範，供參考。
+# 程式碼規範
+我們沒有嚴格的程式碼規範，你可以定義適合你項目的程式碼規範。以下是我們有使用的一些規範，供參考。
 
 ### 0. IDEA 插件
 推薦安裝如下 IDEA 插件。 
@@ -17,7 +17,7 @@
 ### 2. 相同的字段，要在一處定義，不要在不同地方重複定義相同字段。請嚴格遵守這一點以便維護。
 
 ### 3. 未嚴格實現 Restful 風格，只使用 POST（以及 GET，如有需要）從而簡化和統計接口設計
-對於 GET，請使用 "?a=6&b=6"，不要用 "/a/6/b/6"，請查看 [MainAspect.java](./../src/main/java/org/hkpc/dtd/common/core/aspect/MainAspect.java) 代碼實現詳情。  
+對於 GET，請使用 "?a=6&b=6"，不要用 "/a/6/b/6"，請查看 [MainAspect.java](./../src/main/java/org/hkpc/dtd/common/core/aspect/MainAspect.java) 程式碼實現詳情。  
 
 未嚴格實現 Restful 風格原因：
 1. 內部 API 並不需要 restful，還更安全，可防止被黑客猜路徑
@@ -55,8 +55,8 @@
 | `feat`：新功能                                  |
 | `fix`：修復 bug                                |
 | `docs`：文檔變更                                 |
-| `style`：代碼格式（不影響功能，例如空格、分號等）                |
-| `refactor`：代碼重構（既不是新增功能，也不是修復 bug）          |
+| `style`：程式碼格式（不影響功能，例如空格、分號等）                |
+| `refactor`：程式碼重構（既不是新增功能，也不是修復 bug）          |
 | `perf`：效能優化                                 |
 | `test`：增加或修改測試                              |
 | `build`：影響建構系統或外部依賴的更改（如 npm、gulp、webpack）  |
@@ -64,7 +64,7 @@
 | `chore`：其他不屬於上述類型的更改（如建構流程、輔助工具、依賴庫升級等）     |
 | `revert`：回滾某個更早之前的提交                        |
 
-### 6. 阿里巴巴 Java 代碼規範
-我們推薦參考阿里巴巴 Java 代碼規範:   
+### 6. 阿里巴巴 Java 程式碼規範
+我們推薦參考阿里巴巴 Java 程式碼規範:   
 https://github.com/alibaba/p3c
 

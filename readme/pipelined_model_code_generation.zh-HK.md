@@ -1,5 +1,5 @@
-## 流水線（Pipeline）式模型代碼生成  
-這是一種從 PostgreSQL 資料庫表結構到 MyBatis Generator 代碼，再到 Controller 的 HTTP POST DTO，最後到 SpringDoc 註解的流水線式模型代碼生成方法。  
+## 流水線（Pipeline）式模型程式碼生成  
+這是一種從 PostgreSQL 資料庫表結構到 MyBatis Generator 程式碼，再到 Controller 的 HTTP POST DTO，最後到 SpringDoc 註解的流水線式模型程式碼生成方法。  
 它可以幫助開發者更快開發、統一維護並減少重複工作。  
 
 ### 設計理念  
@@ -8,7 +8,7 @@
 - 該方法並非全自動，而是有意設計成半自動：機器處理大部分重複工作，人工保留靈活決策空間。  
 - 一個關鍵理念是以資料庫表註釋作為單一事實來源，在一個地方維護元數據，再傳播到 Model、Mapper、DTO 和 API 文檔。  
 
-### 代碼實現細節  
+### 程式碼實現細節  
 [MybatisGenerator.java](./../src/main/java/org/hkpc/dtd/component/postgres/mybatis/generator/MybatisGenerator.java)  
 [generator-configuration.xml](../src/main/resources/generator-configuration.xml)  
 [CustomCommentGenerator.java](./../src/main/java/org/hkpc/dtd/component/postgres/mybatis/generator/CustomCommentGenerator.java)  
@@ -18,7 +18,7 @@
 1. PostgreSQL 資料庫表結構設計  
    所有表註釋、字段註釋和數據類型都在 PostgreSQL 表結構中定義，字段註釋以資料庫為準並統一維護。  
 
-2. 由 MyBatis Generator 生成 Java 代碼  
+2. 由 MyBatis Generator 生成 Java 程式碼  
    MyBatisGenerator.java 可根據資料庫表結構自動生成 Model（實體類）、Mapper（接口）和 Mapper XML（SQL 映射文件）。  
    通過 CustomCommentGenerator.java 的配置，生成的 Model 和 Mapper 會帶有表與字段註釋，並符合 SpringDoc 的 `@Schema` 規範。  
 

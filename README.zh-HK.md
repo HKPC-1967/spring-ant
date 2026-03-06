@@ -4,7 +4,7 @@ Language : [English](README.md) | [简体中文](README.zh-CN.md)
 Sprint Ant Family 由三個開源倉庫組成，旨在實現 Web 應用的快速開發。  
 - **Sprint Ant Backend**：Spring Boot 後端（本倉庫）。
 - **[Sprint Ant Frontend](https://github.com/HKPC-1967/spring-ant-frontend)**：基於 **Ant Design Pro** 的 React 框架，用於快速構建一個**後台管理系統**。
-- **[Sprint Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)**：當你不使用 **Ant Design Pro** 作為 UI 框架時，可以將核心 TypeScript 代碼（大約 200 行）複製到你現有的前端項目中，以快速整合 **Sprint Ant Backend** API。
+- **[Sprint Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)**：當你不使用 **Ant Design Pro** 作為 UI 框架時，可以將核心 TypeScript 程式碼（大約 200 行）複製到你現有的前端項目中，以快速整合 **Sprint Ant Backend** API。
 
 
 ## 功能亮點
@@ -25,7 +25,7 @@ Sprint Ant Family 由三個開源倉庫組成，旨在實現 Web 應用的快速
 ---
 
 # Sprint Ant Backend
-一個用於快速開發的 Java Spring Boot 後端框架，核心特性包括：JWT 認證、RBAC（Spring Security）、AOP 切面（統一 API 格式、日誌與錯誤處理）、分頁，以及基於 PostgreSQL -> MyBatis Generator -> Swagger（SpringDoc）的流水線式模型代碼生成。
+一個用於快速開發的 Java Spring Boot 後端框架，核心特性包括：JWT 認證、RBAC（Spring Security）、AOP 切面（統一 API 格式、日誌與錯誤處理）、分頁，以及基於 PostgreSQL -> MyBatis Generator -> Swagger（SpringDoc）的流水線式模型程式碼生成。
 
 ## [資料庫初始化](./readme/database_initialization.zh-HK.md)
 
@@ -66,5 +66,5 @@ http://localhost:8080/api/api-docs
 ## [框架設計](./readme/framework_design.zh-HK.md)
 
 
-## [後續發佈計劃、代碼貢獻與代碼規範](./readme/code_contribution.zh-HK.md)
+## [後續發佈計劃、程式碼貢獻與程式碼規範](./readme/code_contribution.zh-HK.md)
 

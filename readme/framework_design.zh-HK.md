@@ -4,17 +4,17 @@
   以 JSON 格式記錄請求和回應資訊，便於接入 ELK、AWS CloudWatch 等日誌分析平台。  
   包含 `MARK_ALARM_SYSTEM` 的日誌會被設計用於在 Log Analysis Platform 中觸發告警通知（郵件、短訊等）。
 
-- [流水線式模型代碼生成](./pipelined_model_code_generation.zh-HK.md)
+- [流水線式模型程式碼生成](./pipelined_model_code_generation.zh-HK.md)
 - JWT: [UserJwtSubject.java](../src/main/java/org/hkpc/dtd/common/core/jwt/model/UserJwtSubject.java)  [JwtValidateComponent.java](./../src/main/java/org/hkpc/dtd/common/core/jwt/JwtValidateComponent.java)  [JwtAuthenticationFilter.java](../src/main/java/org/hkpc/dtd/common/core/security/filter/JwtAuthenticationFilter.java)  
 - 分頁: [PageHelper](./../src/main/java/org/hkpc/dtd/business/demo/service/impl/DemoRuleServiceImpl.java)
 - 文件上傳和下載: [FileController.java](./../src/main/java/org/hkpc/dtd/business/demo/controller/FileController.java)  [test_file_upload_with_postman.md](test_file_upload_with_postman.md)
 - 工具類: [AesUtil.java](./../src/main/java/org/hkpc/dtd/common/utils/AesUtil.java)  [RedactUtil.java](./../src/main/java/org/hkpc/dtd/common/utils/RedactUtil.java)  [UuidUtil.java](./../src/main/java/org/hkpc/dtd/common/utils/UuidUtil.java)  [UuidTypeHandler.java](./../src/main/java/org/hkpc/dtd/component/postgres/mybatis/handler/UuidTypeHandler.java)  
 
 ## 2. [AGENTS.md](../AGENTS.md)
-AGENTS.md 是用來指導 AI 編碼代理的，包括一些基本知識，可以幫助 AI 代理在這個代碼庫中立即變得高效。
+AGENTS.md 是用來指導 AI 程式碼代理的，包括一些基本知識，可以幫助 AI 代理在這個程式碼庫中立即變得高效。
 
 ## 3. Framework Design philosophy 框架設計理念
-- 這個框架的設計理念是輕量、原生、對擴展開放。它結構清晰，經過測試，定義好了核心功能如 API、錯誤碼和安全；即使是實習生，在有經驗的開發者監督下，也可以很快上手編寫可維護的業務代碼。我們主要實現了核心功能以及和 Ant Design Pro 的對接，你可以在此基礎上根據自己的需求進行擴展和定製，框架搭好後，剩下的就是業務代碼了。
+- 這個框架的設計理念是輕量、原生、對擴展開放。它結構清晰，經過測試，定義好了核心功能如 API、錯誤碼和安全；即使是實習生，在有經驗的開發者監督下，也可以很快上手編寫可維護的業務程式碼。我們主要實現了核心功能以及和 Ant Design Pro 的對接，你可以在此基礎上根據自己的需求進行擴展和定製，框架搭好後，剩下的就是業務程式碼了。
 - 這個 Spring Ant Family 最適合全棧開發者，這也是我們從原來的 Ant Design Pro 中移除 Data Mock 部分的原因，因為這個額外步驟會讓我們在全棧開發實踐中的開發速度變慢。
 
 ## 4. 對象類型
@@ -32,7 +32,7 @@ AGENTS.md 是用來指導 AI 編碼代理的，包括一些基本知識，可以
 在 Controller 返回前多做一層轉換。將資料庫 Model/Entity（`Contact`）轉換為回應 VO（`ContactVO`），只保留允許返回給前端的字段，不要直接返回 Model。  
 
 ```java
-// 有用的代碼片段
+// 有用的程式碼片段
 @GetMapping("/contacts")
 public List<ContactVO> listContacts() {
   List<Contact> contacts = contactRepository.findAllWithCompany();
