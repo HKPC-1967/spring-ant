@@ -27,7 +27,7 @@ Sprint Ant Family consists of three open-source repositories designed for rapid 
 # Sprint Ant Backend
 A Java Spring Boot backend framework for rapid development, with core features such as JWT authentication, RBAC (Spring Security), Aspect (unified API format, logging, and error handling), pagination, and pipelined model code generation from PostgreSQL -> MyBatis Generator -> Swagger (SpringDoc).
 
-## [Database initialization](./readme/database_initialization.md)
+## [Database Initialization](./readme/database_initialization.md)
 
 ## Build the project
 * Gradle (to build a .jar file; you may change "/" to "\\" to suit your OS)   
@@ -36,7 +36,7 @@ A Java Spring Boot backend framework for rapid development, with core features s
 * Docker (to build docker image)   
 `docker build -t spring_ant_backend:0.0.1 .`
 
-## 5 ways to run the project in the DEV environment (application-dev.yml)
+## 5 ways to run the project in the DEV Environment ([application-dev.yml](src/main/resources/application-dev.yml))
 
 * Run with IDEA Ultimate Edition (recommended for local development and debugging)</br>
 Edit Configuration -> Active profile: `dev`
@@ -67,3 +67,8 @@ http://localhost:8080/api/api-docs
 
 
 ## [Future Release Plan, Code Contribution, and Code Convention](./readme/code_contribution.md)
+
+## Why we created this open-source project
+This project is open-sourced by Nick, Jacob, and Ken from the Hong Kong Productivity Council (HKPC). The original idea came from finding that Ant Design Pro is a great React UI solution, but there is no ready-to-use backend framework for it. We hope that open-sourcing this project can be helpful for others. For example, Small and Medium Enterprises (SMEs) can use this project to quickly set up an admin-panel web application. Don't worry if you don't know Java and Spring Boot — you can just run it, and the detailed documentation and code comments will help you master it quickly.
+
+Let us know if you find this project helpful in any way, and feel free to ask questions in the **[GitHub Discussions tab](https://github.com/HKPC-1967/spring-ant/discussions)**. Your support and feedback are valuable to us.

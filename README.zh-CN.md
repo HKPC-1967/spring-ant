@@ -36,7 +36,7 @@ Sprint Ant Family 由三个开源仓库组成，旨在实现 Web 应用的快速
 * Docker（用于构建 Docker 镜像）   
 `docker build -t spring_ant_backend:0.0.1 .`
 
-## DEV 环境（application-dev.yml）下的 5 种运行方式
+## DEV 环境（[application-dev.yml](src/main/resources/application-dev.yml)）下的 5 种运行方式
 
 * 使用 IDEA Ultimate Edition 运行（推荐用于本地开发与调试）</br>
 Edit Configuration -> Active profile: `dev`
@@ -67,3 +67,9 @@ http://localhost:8080/api/api-docs
 
 
 ## [后续发布计划、代码贡献与代码规范](./readme/code_contribution.zh-CN.md)
+
+## 为什么我们创建这个开源项目
+这个项目由香港生产力促进局（HKPC）的 Nick、Jacob 和 Ken 开源。最初的想法来源于我们发现 Ant Design Pro 是一个非常优秀的 React UI 解决方案，但并没有一个现成直接可用的后端框架与之配套。我们希望将这个项目开源能够帮助到有需要的其他人。例如，中小企业（SMEs）可以利用这个项目，快速搭建一个后台管理系统。即使你不懂 Java 和 Spring Boot 也不用担心 —— 你只需要先把它跑起来，详细的文档和代码注释会帮助你快速上手。
+
+如果这个项目在任何方面对你有帮助，欢迎告诉我们；如果你有任何问题，也欢迎在 **[GitHub Discussions 页面](https://github.com/HKPC-1967/spring-ant/discussions)** 中提问。你的支持与反馈对我们非常宝贵。
+
