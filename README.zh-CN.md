@@ -18,7 +18,7 @@ Sprint Ant Family 由三个开源仓库组成，旨在实现 Web 应用的快速
 - 可配置布局：深色模式、主题色、导航模式（侧边、顶部、混合）等。 
  
 ![RBAC_Message.jpg](readme/document_images/readme/RBAC_Message.jpg)
-- Loading 状态管理（局部loading动画和全局遮罩层，避免请求进行中用户继续操作）（如下图红框）。
+- Loading 状态管理（`局部loading动画`和`全局遮罩层`，避免请求进行中用户继续操作）（如下图红框）。
 - 分页（如下图黄框）
  
 ![Loading_Pagination.png](readme/document_images/readme/Loading_Pagination.png)

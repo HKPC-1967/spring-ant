@@ -18,7 +18,7 @@ Sprint Ant Family consists of three open-source repositories designed for rapid 
 - Configurable Layout: Dark Mode, Theme Color, Navigation (side, top, mix), etc.  
  
 ![RBAC_Message.jpg](readme/document_images/readme/RBAC_Message.jpg)
-- Loading state management (Loading Spinners and a Loading Overlay to prevent user interaction while requests are in progress). (red below)
+- Loading state management (`Loading Spinner` and `Loading Overlay` to prevent user interaction while requests are in progress). (red below)
 - Pagination (yellow below)
  
 ![Loading_Pagination.png](readme/document_images/readme/Loading_Pagination.png)
