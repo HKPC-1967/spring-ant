@@ -11,15 +11,16 @@ Sprint Ant Family 由三个开源仓库组成，旨在实现 Web 应用的快速
 - 基于 JWT Token 的登录认证 （默认用户名：`admin` 或 `user`，密码：`ant.design`）  
 - 多语言支持  
 ![login_Page.png](readme/document_images/readme/Login_Page.jpg)
-- 基于角色的访问控制（后端 API 使用 Spring Security RBAC）  
-  如下图红框所示：左侧管理员admin可访问 "admin page"、"admin sub-page"、"admin button"，右侧普通用户user则无权限。
+- 基于角色的访问控制 (RBAC)  
+  如下图红框所示：左侧管理员admin可访问 "admin page"、"admin sub-page"、"admin button"，右侧普通用户user则无权限。后端用Spring Security实现RABC。
 - 错误码与展示类型  
-  如下图蓝框所示：后端可按业务需要返回不同错误码与展示类型；同时对网络层与 HTTP 层错误有进行统一处理。  
+  如下图蓝框所示：后端可按业务需要返回不同`错误码`与`展示类型`；同时前端对网络层与 HTTP 层错误进行统一处理。  
 - 可配置布局：深色模式、主题色、导航模式（侧边、顶部、混合）等。 
+ 
 ![RBAC_Message.jpg](readme/document_images/readme/RBAC_Message.jpg)
-- 加载动画（如下图红框）
-- 请求处理中使用遮罩层，防止用户误操作
+- Loading 状态管理（局部loading动画和全局遮罩层，避免请求进行中用户继续操作）（如下图红框）。
 - 分页（如下图黄框）
+ 
 ![Loading_Pagination.png](readme/document_images/readme/Loading_Pagination.png)
 
 ---

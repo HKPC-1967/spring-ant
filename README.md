@@ -11,15 +11,16 @@ Sprint Ant Family consists of three open-source repositories designed for rapid 
 - Login with JWT tokens (default username: `admin` or `user`, password: `ant.design`)  
 - Multi-language support  
 ![login_Page.jpg](readme/document_images/readme/Login_Page.jpg)
-- Role-Based Access Control (Spring Security RBAC for backend APIs)  
-  As shown in red below, the admin on the left has access to "admin page", "admin sub-page", and "admin button", while the regular user on the right does not.
-- Error Codes and Display Types  
-  As shown in blue below, the backend can return different error codes and display types based on business needs. Network and HTTP-level errors are also handled uniformly.  
-- Configurable Layout: Dark Mode, Theme Color, Navigation (side, top, mix), etc. 
+- Role-Based Access Control (RBAC)  
+  As shown in red below, the admin on the left has access to "admin page", "admin sub-page", and "admin button", while the regular user on the right does not. Backend is using Spring Security for RBAC.
+- Error Code and Display Type  
+  As shown in blue below, the backend can return different `Error Code` and `Display Type` based on business needs. Network and HTTP-level errors are also handled uniformly by Frontend.  
+- Configurable Layout: Dark Mode, Theme Color, Navigation (side, top, mix), etc.  
+ 
 ![RBAC_Message.jpg](readme/document_images/readme/RBAC_Message.jpg)
-- Loading spinners (red below)
-- Loading overlay to prevent user interaction while requests are in progress
+- Loading state management (Loading Spinners and a Loading Overlay to prevent user interaction while requests are in progress). (red below)
 - Pagination (yellow below)
+ 
 ![Loading_Pagination.png](readme/document_images/readme/Loading_Pagination.png)
 
 ---
