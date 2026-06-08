@@ -3,7 +3,7 @@
 The PostgreSQL password is configured under `spring.datasource` in [application-dev.yml](../src/main/resources/application-dev.yml).   
 You can use Docker to install PostgreSQL using the following command:
 ```shell
-docker run --name postgres18 -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:18
+docker run --name postgres18 -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=change-this-pgsql-password -p 5432:5432 -d postgres:18
 ```
 
 ##  2. Create tables 

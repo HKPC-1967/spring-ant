@@ -8,13 +8,13 @@ project-config:
     cors-allowed-origins: "*,https://www.example.com"
     swagger-auth:
       username: swagger
-      password: change-me
+      password: change-this-swagger-password
 
 spring:
   datasource:
     # "postgres" is the database name, one PostgreSQL server can have multiple databases
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: postgres
+    password: change-this-pgsql-password
 
 

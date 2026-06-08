@@ -38,7 +38,7 @@ VALUES(1,1, 'admin', '$2a$10$PAJGE4d1upApRodWX9V6GeQSNQ5/KwzdxtLE1xO5ULfHjnB2k14
 INSERT INTO user_account
 (id, perm_ver, username, "password", email, nickname, avatar, title, additional_info, created_at, updated_at)
 VALUES(2,1, 'user', '$2a$10$PAJGE4d1upApRodWX9V6GeQSNQ5/KwzdxtLE1xO5ULfHjnB2k14lG', 'user@133.com', 'User', NULL, NULL, NULL, '2024-11-06 17:05:59.076', '2024-11-06 17:05:59.076');
-
+SELECT setval('user_account_id_seq', (SELECT MAX(id) FROM user_account));
 
 
 CREATE TABLE user_role (
