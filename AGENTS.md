@@ -32,6 +32,12 @@
 - Run (dev profile): `./gradlew bootRun -Dspring.profiles.active=dev` or set `SPRING_PROFILES_ACTIVE=dev` in IDE.
 - Database init: `readme/database_initialization.md` + `readme/sql/tables.sql`.
 
+## Backend validation checklist
+- SQL under `readme/sql` matches mapper XML, mapper interfaces, DTOs, and service expectations.
+- Backend compile succeeds with `./gradlew compileJava` or `./gradlew.bat compileJava` on Windows.
+- Controller responses follow the unified response envelope unless the endpoint is intentionally listed in `MainAspect.NO_CHANGE_RESULT_URLS`.
+- Security route changes are reflected in `SpringSecurityConfig` and JWT exclusion lists only when required.
+
 ## Where to look first
 - Authentication: `common/core/security/filter/JwtAuthenticationFilter.java`, `common/core/jwt/JwtValidateComponent.java`.
 - Unified API format + logging: `common/core/aspect/MainAspect.java`, `common/core/aspect/utils/ResponseStructureUtil.java`.
