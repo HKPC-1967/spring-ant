@@ -66,6 +66,19 @@ http://localhost:8080/api/api-docs
 
 ## [Framework Design](./readme/framework_design.md)
 
+## AI Coding Best Practices
+
+#### 1. Build on a Core Architecture to Ensure a Secure Foundation
+Letting AI build a framework from scratch makes it hard to guarantee architectural quality and security. Therefore, it is **highly recommended to have AI develop on top of an already validated core framework**.
+- **Advantages**: A reliable and secure foundation allows AI to focus solely on implementing business logic, significantly boosting both development efficiency and code quality.
+
+#### 2. `AGENTS.md` for Frontend and Backend to Unify Context
+`AGENTS.md` serves as a dedicated context guide for AI. It helps AI clearly understand the core architecture, tech stack, and API integration specs of both frontend and backend, preventing "hallucinations" and architectural drift.
+
+#### 3. Drive Complete Business Generation with a Single Prompt
+Our testing shows that **a single prompt** is enough for AI to generate complete, runnable frontend and backend business logic.
+- **Example Scenario**: "*There is a XX business involving Admin and User roles, with XX features respectively.*" (Real prompts are much more complex.)
+- **Execution Outcome**: AI can accurately understand the pre-designed RBAC permission architecture, automatically complete the database table design, and generate frontend and backend code, achieving end-to-end business implementation.
 
 ## [Future Release Plan, Code Contribution, and Code Convention](./readme/code_contribution.md)
 
