@@ -1,10 +1,10 @@
 Language : [English](README.md) | [繁體中文](README.zh-HK.md)
 
-# Sprint Ant Family
-Sprint Ant Family 由三个开源仓库组成，旨在实现 Web 应用的快速开发。  
-- **Sprint Ant Backend**：Spring Boot后端（本仓库）。
-- **[Sprint Ant Frontend](https://github.com/HKPC-1967/spring-ant-frontend)**：基于 **Ant Design Pro** 的 React 框架，用于快速构建一个**后台管理系统**。
-- **[Sprint Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)**： 当你不使用 **Ant Design Pro** 作为 UI 框架时，可以将核心 TypeScript 代码（大约 200 行）复制到你现有的前端项目中，以快速集成 **Spring Ant Backend** API。
+# Spring Ant Family
+Spring Ant Family 由三个开源仓库组成，旨在实现 Web 应用的快速开发。  
+- **Spring Ant Backend**：Spring Boot后端（本仓库）。
+- **[Spring Ant Frontend](https://github.com/HKPC-1967/spring-ant-frontend)**：基于 **Ant Design Pro** 的 React 框架，用于快速构建一个**后台管理系统**。
+- **[Spring Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)**： 当你不使用 **Ant Design Pro** 作为 UI 框架时，可以将核心 TypeScript 代码（大约 200 行）复制到你现有的前端项目中，以快速集成 **Spring Ant Backend** API。
 
 
 ## 功能亮点
@@ -25,7 +25,7 @@ Sprint Ant Family 由三个开源仓库组成，旨在实现 Web 应用的快速
 
 ---
 
-# Sprint Ant Backend
+# Spring Ant Backend
 一个用于快速开发的 Java Spring Boot 后端框架，核心特性包括：JWT 认证、RBAC（Spring Security）、AOP 切面（统一 API 格式、日志与错误处理）、分页，以及基于 PostgreSQL -> MyBatis Generator -> Swagger（SpringDoc）的流水线式模型代码生成。
 
 ## [数据库初始化](./readme/database_initialization.zh-CN.md)

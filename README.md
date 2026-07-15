@@ -1,10 +1,10 @@
 Language : [简体中文](README.zh-CN.md) | [繁體中文](README.zh-HK.md)
 
-# Sprint Ant Family
-Sprint Ant Family consists of three open-source repositories designed for rapid web application development.  
-- **Sprint Ant Backend**: the Spring Boot Backend (this repository).
-- **[Sprint Ant Frontend](https://github.com/HKPC-1967/spring-ant-frontend)**: the React Frontend based on **Ant Design Pro**, for quickly building an **admin-panel web application**, see Feature Highlights screenshot below.
-- **[Sprint Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)**: if you are not using **Ant Design Pro** as your UI framework, then you can copy the 200 lines of core TypeScript code into your existing Frontend to integrate with the **Spring Ant Backend** API. 
+# Spring Ant Family
+Spring Ant Family consists of three open-source repositories designed for rapid web application development.  
+- **Spring Ant Backend**: the Spring Boot Backend (this repository).
+- **[Spring Ant Frontend](https://github.com/HKPC-1967/spring-ant-frontend)**: the React Frontend based on **Ant Design Pro**, for quickly building an **admin-panel web application**, see Feature Highlights screenshot below.
+- **[Spring Ant Frontend API Core](https://github.com/HKPC-1967/spring-ant-frontend-api-core)**: if you are not using **Ant Design Pro** as your UI framework, then you can copy the 200 lines of core TypeScript code into your existing Frontend to integrate with the **Spring Ant Backend** API. 
 
 
 ## Feature Highlights
@@ -25,7 +25,7 @@ Sprint Ant Family consists of three open-source repositories designed for rapid 
 
 ---
 
-# Sprint Ant Backend
+# Spring Ant Backend
 A Java Spring Boot backend framework for rapid development, with core features such as JWT authentication, RBAC (Spring Security), Aspect (unified API format, logging, and error handling), pagination, and pipelined model code generation from PostgreSQL -> MyBatis Generator -> Swagger (SpringDoc).
 
 ## [Database Initialization](./readme/database_initialization.md)
