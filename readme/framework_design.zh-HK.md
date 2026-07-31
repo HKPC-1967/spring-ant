@@ -62,3 +62,6 @@ private ContactVO toContactRecord(Contact contact) {
 - 但如果更符合你的業務需求並能提升開發效率，你仍然可以選擇直接在 SQL 中定義返回字段。
 
 
+## 5. Swagger
+- Swagger 使用表單登入和 Session Cookie，因此頁面認證不會覆蓋介面請求使用的 Bearer JWT。
+- 測試受保護的介面時，請點擊 **Authorize** 並輸入不帶 `Bearer ` 前綴的 JWT；Swagger 會自動添加該前綴。

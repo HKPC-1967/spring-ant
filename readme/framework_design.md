@@ -60,4 +60,6 @@ private ContactVO toContactRecord(Contact contact) {
 - Rule of thumb: Model for DB read/write, DTO/VO for API request/response. Controller is the clearest "inbound/outbound filter point".  
 - But you can still choose to define the returned fields directly in SQL if that better fits your business needs and speeds up development.  
 
-
+## 5. Swagger
+- Swagger uses a form login and session cookie so its page authentication does not overwrite the Bearer JWT used by API requests. 
+- To test a protected API, click **Authorize** and enter the JWT without the `Bearer ` prefix; Swagger adds the prefix automatically.

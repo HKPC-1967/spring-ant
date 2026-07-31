@@ -15,7 +15,7 @@
 - JWT access token header is `Authorization: Bearer <token>`; refresh token header is `refreshToken` (see `CommonConst`).
 - Routes excluded from JWT checks are in `CommonConst.NO_CHECK_JWT_TOKEN_URLS` and `OpenApiConfig` excludes login/refresh from Swagger header injection.
 - JWT signing key is stored encrypted in DB (see `DbConfigService.KeyEnum.JWT_KEY`), not in YAML.
-- Swagger UI is protected by basic auth (`project-config.spring-security.swagger-auth.*` in `application-dev.yml`).
+- Swagger UI is protected by Spring Security form login with a session cookie (`project-config.spring-security.swagger-auth.*` in `application-dev.yml`); business APIs remain stateless and use Bearer JWTs.
 
 ## MyBatis code generation pipeline
 - DB table/column comments are the source of truth and are propagated via MyBatis Generator + custom comments.

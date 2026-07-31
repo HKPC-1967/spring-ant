@@ -12,6 +12,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -52,13 +53,19 @@ public class SpringSecurityConfig {
     @Order(1)
     public SecurityFilterChain swaggerFilterChain(HttpSecurity http) throws Exception {
         http
-                .securityMatcher("/swagger-ui/**", "/swagger-ui.html", "/api-docs/**")
+                // Spring Security selects exactly one filter chain for each request.
+                // Include Spring Security‘s /login and /logout here so they are handled by this chain's form-login and session filters instead of falling through to the JWT chain.
+                .securityMatcher("/swagger-ui/**", "/swagger-ui.html", "/api-docs/**", "/login", "/logout")
                 .authorizeHttpRequests(authorize -> authorize
+                        // Unauthenticated users must be able to view and submit the login form.
+                        .requestMatchers("/login").permitAll()
+                        // Swagger resources and the logout endpoint require a Swagger session.
                         .anyRequest().hasRole(SWAGGER_ROLE)
                 )
-                .httpBasic(Customizer.withDefaults())
-                .sessionManagement(session -> session.disable())
-                .csrf(csrf -> csrf.disable());
+                // use form-login here, store Swagger authentication in JSESSIONID. (Unlike HTTP Basic authentication,form-login does not occupy the Authorization header used by business JWTs.)
+                .formLogin(Customizer.withDefaults())
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
 
         return http.build();
     }
@@ -115,8 +122,10 @@ public class SpringSecurityConfig {
                         .anyRequest().permitAll()
                 )
 
-                // As we are using JWT which is stateless, we can disable session management
-                .sessionManagement(session -> session.disable())
+                // STATELESS prevents this JWT chain from creating an HTTP session or reading its SecurityContext from an existing session, including Swagger's JSESSIONID.
+                // PS：session.disable() only removes Spring Security's session-management configurer; With only session.disable(), SecurityContextHolderFilter can still use HttpSessionSecurityContextRepository to load the Swagger authentication.The JWT chain may then see the request as already authenticated through Swagger’s session.
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 // When using JWT tokens for authentication, it is common to disable CSRF protection because JWT tokens are not vulnerable to CSRF attacks. CSRF protection is primarily needed for stateful sessions where cookies are used for authentication.
                 .csrf(csrf -> csrf.disable());
 

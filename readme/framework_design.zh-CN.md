@@ -62,3 +62,6 @@ private ContactVO toContactRecord(Contact contact) {
 - 但如果更符合你的业务需求并能提升开发效率，你仍然可以选择直接在SQL中定义返回字段。
 
 
+## 5. Swagger
+- Swagger 使用表单登录和 Session Cookie，因此页面认证不会覆盖接口请求使用的 Bearer JWT。
+- 测试受保护的接口时，请点击 **Authorize** 并输入不带 `Bearer ` 前缀的 JWT；Swagger 会自动添加该前缀。
