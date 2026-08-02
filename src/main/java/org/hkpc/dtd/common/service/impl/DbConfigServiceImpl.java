@@ -51,8 +51,8 @@ public class DbConfigServiceImpl implements DbConfigService {
                 value = AesUtil.decrypt(value, DB_CONFIG_AES_KEY);
             }
             singletonParamsContainer.put(key, value);
-            // to avoid the sensitive key-value data in log, so only log part of the value
-            logger.info("singletonParamsContainer put {},{},{}", key, value.length(),value.substring(0, Math.min(6, value.length())));
+            // to avoid the sensitive key-value data in log, so only log part of the value for debugging, consider removing this log in production.
+            logger.info("singletonParamsContainer put {},{},{}", key, value.length(),value.substring(0, Math.min(3, value.length())));
         }
 
         return value;

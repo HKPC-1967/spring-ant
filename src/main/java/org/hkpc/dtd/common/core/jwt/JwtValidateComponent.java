@@ -37,14 +37,14 @@ public class JwtValidateComponent {
         try {
             String jwtKey = dbConfigService.getValueByKey(DbConfigService.KeyEnum.JWT_KEY);
             SecretKey key = Keys.hmacShaKeyFor(jwtKey.getBytes(StandardCharsets.UTF_8));
-            // 解析JWT字符串
+            // 解析JWT字符串 English comment: Parse the JWT string
             Claims claims = Jwts.parser()
                     .verifyWith(key)
                     .build()
                     .parseSignedClaims(jwtToken)
                     .getPayload();
 
-            // 校验JWT是否过期
+            // 校验JWT是否过期 English comment: Check if the JWT has expired
             Date expiration = claims.getExpiration();
             if (!expiration.after(new Date())){
                 throw new CodeException(ErrorCodeEnum.INVALID_JWT_TOKEN);
@@ -56,12 +56,12 @@ public class JwtValidateComponent {
             return userJwtSubject;
 
         } catch (ExpiredJwtException e) {
-            logger.info("expired jwt token {}",jwtToken);
-            // 如果解析或校验过程中抛出异常，则认为JWT无效
+            logger.trace("expired jwt token {}",jwtToken);
+            // 如果解析或校验过程中抛出异常，则认为JWT无效 English comment: If an exception is thrown during parsing or verification, it is considered invalid
             throw new CodeException(ErrorCodeEnum.INVALID_JWT_TOKEN,e);
         } catch (Exception e) {
-            logger.error(CommonConst.MARK_ALARM_SYSTEM, "getJwtSubject error {},{},{}",jwtToken,e.getMessage(),jwtToken, e);
-            // 如果解析或校验过程中抛出异常，则认为JWT无效
+            logger.error(CommonConst.MARK_ALARM_SYSTEM, "getJwtSubject error {},{}",jwtToken,e.getMessage(), e);
+            // 如果解析或校验过程中抛出异常，则认为JWT无效 English comment: If an exception is thrown during parsing or verification, it is considered invalid
             throw new CodeException(ErrorCodeEnum.INVALID_JWT_TOKEN,e);
         }
     }
