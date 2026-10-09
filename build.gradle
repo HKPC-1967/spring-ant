@@ -48,6 +48,8 @@ dependencies {
     implementation 'com.alibaba.fastjson2:fastjson2:2.0.61'
 
     implementation 'io.jsonwebtoken:jjwt-api:0.13.0'
+    // Potential error (jjwt-impl classes not found) during local run. Reason: IDE run configurations often omit runtimeOnly jars
+    // Quick fix (but not best practice): change runtimeOnly to implementation
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.13.0'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.13.0'
 
