@@ -27,8 +27,8 @@ FROM eclipse-temurin:25-jre-alpine
 
 WORKDIR /app
 
-# Copy the .jar file
-COPY --from=build /workspace/app/build/libs/*.jar app.jar
+# Boot jar only (*-plain.jar is excluded by the glob suffix)
+COPY --from=build /workspace/app/build/libs/*-SNAPSHOT.jar app.jar
 
 # Run
 ENTRYPOINT ["java", "-jar", "app.jar"]
