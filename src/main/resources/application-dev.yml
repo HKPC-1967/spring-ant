@@ -13,7 +13,7 @@ project-config:
 spring:
   datasource:
     # "postgres" is the database name, one PostgreSQL server can have multiple databases
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/spring-ant
     username: postgres
     password: change-this-pgsql-password
 

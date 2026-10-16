@@ -2,24 +2,21 @@
 // ./gradlew build -x test
 // ./gradlew --version
 
-// all versions belows are updated at 2026-02-14, excepted the ones specified with comments.
-// 中文注释： 以下所有版本均于2026-02-14更新了大版本下的最新版本，有最新大版本未更新的依赖后面有注释标记。
+// all versions below are updated at 2026-10-16.
 plugins {
-    id 'org.springframework.boot' version '3.5.10' //v4 available
+    id 'org.springframework.boot' version '4.1.1'
     id 'io.spring.dependency-management' version '1.1.7'
     id 'java'
 }
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(21) //25 available, 21 is the last LTS (Long Time Support) version
+		languageVersion = JavaLanguageVersion.of(25)
 	}
 }
 
 group = 'org.hkpc.dtd'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '21'
-targetCompatibility = '21'
 
 repositories {
     mavenCentral()
@@ -33,19 +30,19 @@ dependencies {
 //    testImplementation 'org.springframework.security:spring-security-test'
 
     implementation 'org.postgresql:postgresql:42.7.10'
-    implementation 'com.alibaba:druid:1.2.27'
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'//v4 available
-    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:2.1.1'
+    implementation 'com.alibaba:druid-spring-boot-4-starter:1.2.28'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:4.1.0'
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:4.1.1'
     implementation 'org.mybatis.generator:mybatis-generator-core:1.4.2'
 
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.15'//v3 available
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.1.1'
 
     implementation 'org.aspectj:aspectjweaver:1.9.25.1'
 
     compileOnly 'org.projectlombok:lombok:1.18.42'
     annotationProcessor 'org.projectlombok:lombok:1.18.42'
 
-    implementation 'com.alibaba.fastjson2:fastjson2:2.0.61'
+    implementation 'com.alibaba.fastjson2:fastjson2:2.0.65'
 
     implementation 'io.jsonwebtoken:jjwt-api:0.13.0'
     // Potential error (jjwt-impl classes not found) during local run. Reason: IDE run configurations often omit runtimeOnly jars
@@ -85,7 +82,6 @@ tasks.withType(GroovyCompile).configureEach {
     groovyOptions.parameters = true
 }
 
-// test all functions with @Test
-//tasks.withType(Test) {
-//    useJUnitPlatform()
-//}
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}

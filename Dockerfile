@@ -1,5 +1,5 @@
 # Stage 1 - Install dependencies
-FROM eclipse-temurin:21-jdk-alpine as deps
+FROM eclipse-temurin:25-jdk-alpine as deps
 
 WORKDIR /workspace/app
 
@@ -23,7 +23,7 @@ COPY src src
 RUN --mount=type=cache,target=/root/.gradle ./gradlew build -x test --no-daemon
 
 # Stage 3 - Create the final image
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jre-alpine
 
 WORKDIR /app
 

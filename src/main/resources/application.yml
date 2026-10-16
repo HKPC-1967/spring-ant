@@ -41,9 +41,9 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: org.hkpc.dtd.component.postgres.model
 pagehelper:
-  helperDialect: postgresql
+  helper-dialect: postgresql
   reasonable: true
-  supportMethodsArguments: true
+  support-methods-arguments: true
   params: count=countSql
 
 logging:
