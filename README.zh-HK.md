@@ -28,7 +28,7 @@ Spring Ant Family 由三個開源倉庫組成，旨在實現 Web 應用的快速
 # Spring Ant Backend
 一個用於快速開發的 Java Spring Boot 後端框架，核心特性包括：JWT 認證、RBAC（Spring Security）、AOP 切面（統一 API 格式、日誌與錯誤處理）、分頁，以及基於 PostgreSQL -> MyBatis Generator -> Swagger（SpringDoc）的流水線式模型程式碼生成。
 
-## 技術棧（具體版本見 `build.gradle`）
+## 技術棧（具體版本見 [build.gradle](build.gradle)）
 - Java 25, Spring Boot 4, MyBatis, Spring Security, springdoc-openapi, PageHelper, Druid.  
 
 ## [資料庫初始化](./readme/database_initialization.zh-HK.md)

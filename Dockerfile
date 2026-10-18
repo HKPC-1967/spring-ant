@@ -28,6 +28,7 @@ FROM eclipse-temurin:25-jre-alpine
 WORKDIR /app
 
 # Boot jar only (*-plain.jar is excluded by the glob suffix)
+# Note: "SNAPSHOT" is defined in build.gradle
 COPY --from=build /workspace/app/build/libs/*-SNAPSHOT.jar app.jar
 
 # Run
