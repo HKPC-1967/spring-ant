@@ -1,5 +1,5 @@
 # Stage 1 - Install dependencies
-FROM eclipse-temurin:21-jdk-alpine as deps
+FROM eclipse-temurin:25-jdk-alpine as deps
 
 WORKDIR /workspace/app
 
@@ -23,12 +23,12 @@ COPY src src
 RUN --mount=type=cache,target=/root/.gradle ./gradlew build -x test --no-daemon
 
 # Stage 3 - Create the final image
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jre-alpine
 
 WORKDIR /app
 
-# Copy the .jar file
-COPY --from=build /workspace/app/build/libs/*.jar app.jar
+# Boot jar only (*-plain.jar is excluded by the glob suffix)
+COPY --from=build /workspace/app/build/libs/*-SNAPSHOT.jar app.jar
 
 # Run
 ENTRYPOINT ["java", "-jar", "app.jar"]
