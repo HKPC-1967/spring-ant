@@ -28,13 +28,8 @@ Spring Ant Family consists of three open-source repositories designed for rapid 
 # Spring Ant Backend
 A Java Spring Boot backend framework for rapid development, with core features such as JWT authentication, RBAC (Spring Security), Aspect (unified API format, logging, and error handling), pagination, and pipelined model code generation from PostgreSQL -> MyBatis Generator -> Swagger (SpringDoc).
 
-## Prerequisites
-- **JDK 25** (configured via the Gradle Java toolchain in `build.gradle`; install locally or let Gradle provision it)
-- **Gradle 8.14.3+** (use the project wrapper: `./gradlew`)
-- **PostgreSQL** for local development ([application-dev.yml](src/main/resources/application-dev.yml))
-
-## Tech stack (see `build.gradle` for pinned versions)
-- Spring Boot **4.1.1**, springdoc-openapi **3.1.1**, MyBatis Spring Boot **4.1.0**, PageHelper **4.1.1**, Druid **druid-spring-boot-4-starter** **1.2.28**
+## Tech Stack (see `build.gradle` for pinned versions)
+- Java 25, Spring Boot 4, MyBatis, Spring Security, springdoc-openapi, PageHelper, Druid.
 
 ## [Database Initialization](./readme/database_initialization.md)
 

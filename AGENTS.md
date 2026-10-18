@@ -5,7 +5,6 @@
 - Major stack (see `build.gradle`): Spring Boot 4.1.1, MyBatis Spring Boot 4.1.0, PageHelper 4.1.1, springdoc-openapi 3.1.1, Druid `druid-spring-boot-4-starter` 1.2.28.
 - Controllers live under `src/main/java/org/hkpc/dtd/business/*/controller` and are wrapped by an aspect (`common/core/aspect/MainAspect.java`) that logs and enforces the unified response envelope from `ResponseStructureUtil`.
 - Database access uses MyBatis (mapper XML in `src/main/resources/mapper/*.xml`, mapper interfaces in `component/postgres/dao`), PageHelper for pagination, and Druid as the datasource pool.
-- Spring Boot 4 moves default security auto-configuration to `org.springframework.boot.security.autoconfigure` (e.g. `UserDetailsServiceAutoConfiguration` excluded in `Application.java`).
 - JWT auth + RBAC: `JwtAuthenticationFilter` validates tokens, sets Spring Security roles, and `SpringSecurityConfig` applies role checks for specific routes.
 
 ## Response + error handling conventions
@@ -26,7 +25,7 @@
 - Background doc: `readme/pipelined_model_code_generation.md`.
 
 ## Key configs
-- `src/main/resources/application.yml`: `/api` context path, springdoc/Swagger paths, MyBatis type aliases, PageHelper settings (use kebab-case keys such as `helper-dialect` with PageHelper 4.x).
+- `src/main/resources/application.yml`: `/api` context path, springdoc/Swagger paths, MyBatis type aliases, PageHelper settings.
 - `src/main/resources/application-dev.yml`: local DB connection, AES key for DB config, CORS origins, Swagger basic auth.
 
 ## Local workflows (from README)

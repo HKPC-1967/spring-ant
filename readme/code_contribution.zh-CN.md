@@ -7,13 +7,8 @@
 
 
 ## 建议贡献领域
-1. **CI/CD** — 例如 GitHub Actions 执行 `compileJava`、`test`，以及可选的 Docker 镜像构建。
-2. **可观测性** — Spring Boot Actuator（容器健康/就绪探针）、结构化日志或指标接入。
-3. **Redis 缓存**以获得更高性能。  
+1. 增加Redis缓存以获得更高性能。  
    例如，我们在注释中提到 [JwtAuthenticationFilter](../src/main/java/org/hkpc/dtd/common/core/security/filter/JwtAuthenticationFilter.java) 可以通过缓存优化。我们尚未添加该功能，因为并非所有系统都需要如此高的性能，而且 Redis 不是该框架的核心特性。欢迎贡献实现，我们也很乐意审核并合并到 beta 分支。
-4. **测试** — 使用 MockMvc / `spring-security-test` 覆盖登录、刷新令牌、RBAC 与统一 API 响应格式。
-5. **配置规范** — 无密钥的示例 YAML、生产环境凭据外置及相关文档。
-
 
 ## 贡献代码
 
@@ -25,5 +20,7 @@
 
 如果您有具体想法想和我们沟通，也欢迎 email dtd-ai-code@hkpc.org，说明您的想法和计划贡献的内容，我们会创建个贡献者微信群或 Discord 群，方便交流与协作。
 
+## 社区贡献者
+感谢社区贡献者 [Rambo](https://github.com/mcapsule)
 
 ## [代码规范](./code_convention.zh-CN.md)
